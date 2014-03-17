@@ -1,0 +1,9 @@
+<Alloy>
+    <Window title="TasksWindowTitle">
+        <RightNavButton platform="ios">
+            <Button title="Add" id="addButton" />
+        </RightNavButton>
+        
+        <Require id="tasksTable" src="TasksTable" />
+    </Window>
+</Alloy>

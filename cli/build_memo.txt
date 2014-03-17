@@ -1,0 +1,5 @@
+#memo
+
+#build command genymotion
+ti build -p android --device-id "Custom Phone 7 - 4.1.1 - API 16 - 1024x600"
+ti build -p android --device-id "Nexus 7 - 4.4.2 - API 19 - 800x1280"

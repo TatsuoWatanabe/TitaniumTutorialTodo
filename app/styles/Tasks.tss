@@ -1,0 +1,3 @@
+"#addButton[platform=ios]": {
+  systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
+}

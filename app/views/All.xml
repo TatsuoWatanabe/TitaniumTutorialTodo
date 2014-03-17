@@ -1,0 +1,5 @@
+<Alloy>
+    <Window title="AllTasksWindowTitle">
+        <Require id="tasksTable" src="TasksTable" />
+    </Window>
+</Alloy>

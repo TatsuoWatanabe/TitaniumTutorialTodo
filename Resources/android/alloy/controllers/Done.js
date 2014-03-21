@@ -18,8 +18,8 @@ function Controller() {
     $.__views.tasksTable.setParent($.__views.Done);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.tasksTable.dataFilter = function(collection) {
-        return collection.where({
+    $.tasksTable.dataFilter = function(c) {
+        return c.where({
             done: true.toString()
         });
     };

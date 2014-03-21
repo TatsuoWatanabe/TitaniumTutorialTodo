@@ -7,7 +7,7 @@ $.tasksTable.addEventListener('click', function(e) {
         alloy_id: e.rowData._id
     })[0];
     const isDone = model.get('done') === true.toString();
-
+    
     dialogs.confirm({
         message: '[' + model.get('task') + '] ' + (isDone ? 'not Done?' : 'Done?'),
         callback: function() {
@@ -27,9 +27,6 @@ function dataTransform(model) {
  * filter the Tasks model collection data.
  */
 function dataFilter(collection) {
-    if ($.dataFilter) {
-        return $.dataFilter(collection);
-    } else {
-        return collection.models;
-    }
+    if ($.dataFilter) { return $.dataFilter(collection); }
+    else { return collection.models; }
 }

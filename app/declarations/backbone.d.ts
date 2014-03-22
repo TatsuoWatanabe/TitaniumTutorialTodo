@@ -93,7 +93,7 @@ declare module Backbone {
     class Model extends ModelBase implements OptionalDefaults {
 
         static extend(properties: any, classProperties?: any): any; // do not use, prefer TypeScript's extend functionality
-
+        prototype: any;
         attributes: any;
         changed: any[];
         cid: string;
@@ -144,7 +144,7 @@ declare module Backbone {
     class Collection extends ModelBase {
 
         static extend(properties: any, classProperties?: any): any; // do not use, prefer TypeScript's extend functionality
-
+        prototype: any;
         model: any;
         models: any;
         collection: Model;

@@ -1,5 +1,3 @@
-const moment = require('alloy/moment');
-
 exports.definition = {
     config: {
         columns: {
@@ -25,17 +23,18 @@ exports.definition = {
              * @return String
              */
             formatted: function(columnName, format) {
+                var moment = require('alloy/moment');
                 return moment(Number(this.get(columnName))).format(format);
             },
             
             /**
-             * テーブル出力用に整形した値を持ったオブジェクトを返します。
+             * attributesプロパティの複製を拡張したオブジェクトを返します。
              * @return Object
              */
-            getTableViewFormattedJson: function() {
-                const obj = this.toJSON();
-                obj.limitTime = this.formatted('limitTime', 'YYYY/MM/DD h:mm');
-                return obj;
+            toJsonExtended: function() {
+                return _.extend(this.toJSON(), {
+                    limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm')
+                });
             }
         });
 

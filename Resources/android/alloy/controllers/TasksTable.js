@@ -40,17 +40,17 @@ function Controller() {
                 font: {
                     fontSize: "14sp"
                 },
-                text: "undefined" != typeof __alloyId4.__transform["limitTime"] ? __alloyId4.__transform["limitTime"] : __alloyId4.get("limitTime")
+                text: "undefined" != typeof __alloyId4.__transform["limitTimeFormatted"] ? __alloyId4.__transform["limitTimeFormatted"] : __alloyId4.get("limitTimeFormatted")
             });
             __alloyId7.add(__alloyId9);
         }
         $.__views.tasksTable.setData(rows);
     }
-    function dataTransform(model) {
-        return model.getTableViewFormattedJson();
+    function dataTransform(m) {
+        return m.toJsonExtended();
     }
-    function dataFilter(collection) {
-        return $.dataFilter ? $.dataFilter(collection) : collection.models;
+    function dataFilter(c) {
+        return $.dataFilter ? $.dataFilter(c) : c.models;
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "TasksTable";
@@ -70,11 +70,11 @@ function Controller() {
     };
     _.extend($, $.__views);
     $.tasksTable.addEventListener("click", function(e) {
-        const dialogs = require("alloy/dialogs");
-        const model = Alloy.Collections.Todo.where({
+        var dialogs = require("alloy/dialogs");
+        var model = Alloy.Collections.Todo.where({
             alloy_id: e.rowData._id
         })[0];
-        const isDone = model.get("done") === true.toString();
+        var isDone = model.get("done") === true.toString();
         dialogs.confirm({
             message: "[" + model.get("task") + "] " + (isDone ? "not Done?" : "Done?"),
             callback: function() {

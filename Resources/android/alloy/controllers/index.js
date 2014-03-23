@@ -1,6 +1,6 @@
 function Controller() {
     function tabOpen() {
-        const activity = $.index.getActivity();
+        var activity = $.index.getActivity();
         activity.onCreateOptionsMenu = function(evt) {
             evt.menu.add({
                 title: "Add",

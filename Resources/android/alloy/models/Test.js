@@ -64,9 +64,9 @@ exports.definition = models.Todo.exportsDefinition;
 
 var Alloy = require("alloy"), _ = require("alloy/underscore")._, model, collection;
 
-model = Alloy.M("Todo", exports.definition, []);
+model = Alloy.M("Test", exports.definition, []);
 
-collection = Alloy.C("Todo", exports.definition, model);
+collection = Alloy.C("Test", exports.definition, model);
 
 exports.Model = model;
 

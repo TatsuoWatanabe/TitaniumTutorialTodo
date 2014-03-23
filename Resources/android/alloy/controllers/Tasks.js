@@ -20,11 +20,11 @@ function Controller() {
     _.extend($, $.__views);
     $.openAddTask = function() {
         void 0 === Alloy.Globals.currentTab && (Alloy.Globals.currentTab = Alloy.createController("index").getView("tasksTab"));
-        const addWin = Alloy.createController("Add").getView("addWin");
+        var addWin = Alloy.createController("Add").getView("addWin");
         Alloy.Globals.currentTab.open(addWin);
     };
-    $.tasksTable.dataFilter = function(collection) {
-        return collection.where({
+    $.tasksTable.dataFilter = function(c) {
+        return c.where({
             done: false.toString()
         });
     };

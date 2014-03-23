@@ -32,6 +32,15 @@ module models {
         }
         
         /**
+         * モデルの属性を操作する直前に呼ばれるメソッドで、値を検証する処理を記述します。
+         */
+        public validate(attr: any) {
+          if (attr.task.length <= 0) { return "Error: Task is not input."; }
+          else if (String(attr.limitTime).length <= 0) { return "Error: Limit time is not set."; }
+          else { return; }
+        }
+        
+        /**
          * modelのデータをJSONオブジェクトに変換して返します。
          */
         public toJSON(options?: any) /* :typeof Todo.config.columns +TypeScript 0.9.1 */ {

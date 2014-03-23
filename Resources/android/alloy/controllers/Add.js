@@ -104,7 +104,7 @@ function Controller() {
         $.inputTask.blur();
     });
     $.saveTask.addEventListener("click", function() {
-        const todoEntity = Alloy.createModel("Todo", {
+        var todoEntity = Alloy.createModel("Todo", {
             task: $.inputTask.value,
             limitTime: $.todoLimit.value.getTime(),
             done: false.toString()

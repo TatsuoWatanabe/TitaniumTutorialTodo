@@ -1,3 +1,4 @@
+declare var $;
 $.todoLimit.minDate = new Date();
 
 /**
@@ -11,12 +12,12 @@ $.addWrap.addEventListener('click', function() {
  * saveTask
  */
 $.saveTask.addEventListener('click', function saveTask() {
-    const todoEntity = Alloy.createModel('Todo', {
+    var todoEntity = <models.Todo>Alloy.createModel('Todo', {
         task: $.inputTask.value,
         limitTime: $.todoLimit.value.getTime(),
         done: false.toString()
     });
-    
+     
     if (todoEntity.isValid()) {
         todoEntity.save();
         $.addWin.close({animated: true});

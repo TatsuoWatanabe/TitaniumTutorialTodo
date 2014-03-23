@@ -17,6 +17,9 @@ var models;
             this.exportsDefinition = Todo.exportsDefinition;
         }
         __extends(Todo, _super);
+        Todo.prototype.validate = function(attr) {
+            return 0 >= attr.task.length ? "Error: Task is not input." : 0 >= String(attr.limitTime).length ? "Error: Limit time is not set." : void 0;
+        };
         Todo.prototype.toJSON = function(options) {
             var obj = Todo.config.columns;
             obj = _super.prototype.toJSON.call(this, options);

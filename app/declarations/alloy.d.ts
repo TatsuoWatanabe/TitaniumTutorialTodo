@@ -2,7 +2,9 @@ declare module Alloy {
     var Globals: any;
     var Collections: any;
     function createCollection(name: string, ...args: Array<any>): Backbone.Collection;
+    function createModel(name: string,  ...args: Array<any>): Backbone.Model;
     function createController(name: string, ...args: Array<any>);
+    
 }
 
 // ------------------------------------------------------------------------------------

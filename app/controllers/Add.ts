@@ -12,19 +12,19 @@ $.addWrap.addEventListener('click', function() {
  * saveTask
  */
 $.saveTask.addEventListener('click', function saveTask() {
-    var todoEntity = <models.Todo>Alloy.createModel('Todo', {
+    var todo = <models.Todo>Alloy.createModel('Todo', {
         task: $.inputTask.value,
         limitTime: $.todoLimit.value.getTime(),
         done: false.toString()
     });
      
-    if (todoEntity.isValid()) {
-        todoEntity.save();
+    if (todo.isValid()) {
+        todo.save();
         $.addWin.close({animated: true});
         alert($.inputTask.value + ': saved.');
         Alloy.Collections.Todo.fetch();
     } else {
-        todoEntity.destroy();
+        todo.destroy();
         alert($.inputTask.value + ' failed.');
     }
 });

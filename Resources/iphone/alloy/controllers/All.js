@@ -18,11 +18,6 @@ function Controller() {
     $.__views.tasksTable.setParent($.__views.All);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.tasksTable.dataTransform = function(m) {
-        return _.extend(m.toJsonExtended(), {
-            stateVisible: true
-        });
-    };
     _.extend($, exports);
 }
 

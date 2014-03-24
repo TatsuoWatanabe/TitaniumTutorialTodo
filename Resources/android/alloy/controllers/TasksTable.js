@@ -1,8 +1,8 @@
 function Controller() {
-    function __alloyId11(e) {
+    function __alloyId12(e) {
         if (e && e.fromAdapter) return;
-        __alloyId11.opts || {};
-        var models = dataFilter(__alloyId10);
+        __alloyId12.opts || {};
+        var models = dataFilter(__alloyId11);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
@@ -43,11 +43,23 @@ function Controller() {
                 text: "undefined" != typeof __alloyId4.__transform["limitTimeFormatted"] ? __alloyId4.__transform["limitTimeFormatted"] : __alloyId4.get("limitTimeFormatted")
             });
             __alloyId7.add(__alloyId9);
+            var __alloyId10 = Ti.UI.createLabel({
+                width: Ti.UI.FILL,
+                height: Ti.UI.SIZE,
+                textAlign: "left",
+                font: {
+                    fontWeight: "bold"
+                },
+                text: "undefined" != typeof __alloyId4.__transform["stateText"] ? __alloyId4.__transform["stateText"] : __alloyId4.get("stateText"),
+                color: "undefined" != typeof __alloyId4.__transform["stateColor"] ? __alloyId4.__transform["stateColor"] : __alloyId4.get("stateColor"),
+                visible: "undefined" != typeof __alloyId4.__transform["stateVisible"] ? __alloyId4.__transform["stateVisible"] : __alloyId4.get("stateVisible")
+            });
+            __alloyId7.add(__alloyId10);
         }
         $.__views.tasksTable.setData(rows);
     }
     function dataTransform(m) {
-        return m.toJsonExtended();
+        return $.dataTransform ? $.dataTransform(m) : m.toJsonExtended();
     }
     function dataFilter(c) {
         return $.dataFilter ? $.dataFilter(c) : c.models;
@@ -62,11 +74,11 @@ function Controller() {
     $.__views.tasksTable = Ti.UI.createTableView({
         id: "tasksTable"
     });
-    var __alloyId10 = Alloy.Collections["Todo"] || Todo;
-    __alloyId10.on("fetch destroy change add remove reset", __alloyId11);
+    var __alloyId11 = Alloy.Collections["Todo"] || Todo;
+    __alloyId11.on("fetch destroy change add remove reset", __alloyId12);
     $.__views.tasksTable && $.addTopLevelView($.__views.tasksTable);
     exports.destroy = function() {
-        __alloyId10.off("fetch destroy change add remove reset", __alloyId11);
+        __alloyId11.off("fetch destroy change add remove reset", __alloyId12);
     };
     _.extend($, $.__views);
     $.tasksTable.addEventListener("click", function(e) {

@@ -54,9 +54,11 @@ module models {
          * @return Object
          */
         public toJsonExtended() /* :typeof Todo.config.columns +TypeScript 0.9.1 */ {
-            var obj = Todo.config.columns; //型推論
-            obj = _.extend(this.toJSON(), {
-                limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm')
+            var obj = this.toJSON(); //型推論
+            obj = _.extend(obj, {
+                limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm'),
+                stateText:  obj.done === true.toString() ? 'Done' : 'Todo',
+                stateColor: obj.done === true.toString() ? 'blue' : 'red'
             });
             return obj;
         }
@@ -65,7 +67,7 @@ module models {
          * use moment.js format function
          */
         private formatted(columnName: string, format: string) {
-            var moment: MomentStatic = require('alloy/moment');
+            var moment: MomentStatic = require('alloy/moment'); 
             return moment(Number(this.get(columnName))).format(format);
         }
     }

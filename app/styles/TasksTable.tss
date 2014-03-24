@@ -23,3 +23,8 @@
     fontSize: "14sp"
   }
 }
+"#state": {
+  font: {
+    fontWeight: "bold"
+  }
+}

@@ -7,6 +7,9 @@
             <View id="taskWrap">
                 <Label class="taskText" id="task" text="{task}" />
                 <Label class="taskText" id="limitTime" text="{limitTimeFormatted}" />
+                <Label class="taskText" id="state" text="{stateText}" 
+                    color="{stateColor}" 
+                    visible="{stateVisible}" />
             </View>
         </TableViewRow>
     </TableView>

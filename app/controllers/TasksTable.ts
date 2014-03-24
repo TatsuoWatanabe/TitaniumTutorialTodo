@@ -21,12 +21,13 @@ $.tasksTable.addEventListener('click', function(e) {
 /**
  * format the Tasks model data.
  */
-function dataTransform(m: models.Todo) { return m.toJsonExtended(); }
+function dataTransform(m: models.Todo) {
+    return ($.dataTransform) ? $.dataTransform(m) : m.toJsonExtended();
+}
 
 /**
  * filter the Tasks model collection data.
  */
 function dataFilter(c: Backbone.Collection) {
-    if ($.dataFilter) { return $.dataFilter(c); }
-    else { return c.models; }
+    return ($.dataFilter) ? $.dataFilter(c) : c.models;
 }

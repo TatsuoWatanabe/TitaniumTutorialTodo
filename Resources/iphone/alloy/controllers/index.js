@@ -36,6 +36,17 @@ function Controller() {
         id: "doneTab"
     });
     __alloyId12.push($.__views.doneTab);
+    $.__views.all = Alloy.createController("All", {
+        id: "all"
+    });
+    $.__views.allTab = Ti.UI.createTab({
+        window: $.__views.all.getViewEx({
+            recurse: true
+        }),
+        title: "All",
+        id: "allTab"
+    });
+    __alloyId12.push($.__views.allTab);
     $.__views.index = Ti.UI.createTabGroup({
         tabs: __alloyId12,
         id: "index"

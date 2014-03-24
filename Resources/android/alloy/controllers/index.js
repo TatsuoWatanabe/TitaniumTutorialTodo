@@ -21,7 +21,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    var __alloyId12 = [];
+    var __alloyId13 = [];
     $.__views.tasks = Alloy.createController("Tasks", {
         id: "tasks"
     });
@@ -32,7 +32,7 @@ function Controller() {
         title: "Tasks",
         id: "tasksTab"
     });
-    __alloyId12.push($.__views.tasksTab);
+    __alloyId13.push($.__views.tasksTab);
     $.__views.done = Alloy.createController("Done", {
         id: "done"
     });
@@ -43,7 +43,7 @@ function Controller() {
         title: "Done",
         id: "doneTab"
     });
-    __alloyId12.push($.__views.doneTab);
+    __alloyId13.push($.__views.doneTab);
     $.__views.all = Alloy.createController("All", {
         id: "all"
     });
@@ -54,9 +54,9 @@ function Controller() {
         title: "All",
         id: "allTab"
     });
-    __alloyId12.push($.__views.allTab);
+    __alloyId13.push($.__views.allTab);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId12,
+        tabs: __alloyId13,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);

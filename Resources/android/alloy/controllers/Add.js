@@ -104,20 +104,20 @@ function Controller() {
         $.inputTask.blur();
     });
     $.saveTask.addEventListener("click", function() {
-        var todoEntity = Alloy.createModel("Todo", {
+        var todo = Alloy.createModel("Todo", {
             task: $.inputTask.value,
             limitTime: $.todoLimit.value.getTime(),
             done: false.toString()
         });
-        if (todoEntity.isValid()) {
-            todoEntity.save();
+        if (todo.isValid()) {
+            todo.save();
             $.addWin.close({
                 animated: true
             });
             alert($.inputTask.value + ": saved.");
             Alloy.Collections.Todo.fetch();
         } else {
-            todoEntity.destroy();
+            todo.destroy();
             alert($.inputTask.value + " failed.");
         }
     });

@@ -3,3 +3,15 @@
 #build command genymotion
 ti build -p android --device-id "Custom Phone 7 - 4.1.1 - API 16 - 1024x600"
 ti build -p android --device-id "Nexus 7 - 4.4.2 - API 19 - 800x1280"
+
+#Titanium Studio Setting
+TitaniumStudioでのコミットログが文字化けするのを修正する
+http://zaru.tofu-kun.org/2011/11/18/titaniumstudioでのコミットログが文字化けするのを修正す/
+Applications/Titanium Studio/TitaniumStudio.app/Contents/MacOS/TitaniumStudio.ini
+-Dfile.encoding=utf-8
+
+#Alloy Quick Start
+http://docs.appcelerator.com/titanium/3.0/#!/guide/Alloy_Quick_Start-section-34636229_AlloyQuickStart-MoreExamples
+
+#Alloy Samples
+http://docs.appcelerator.com/titanium/3.0/#!/guide/Alloy_Samples-section-37535160_AlloySamples-ImportingaSample

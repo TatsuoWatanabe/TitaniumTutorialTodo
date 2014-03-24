@@ -26,9 +26,12 @@ var models;
             return obj;
         };
         Todo.prototype.toJsonExtended = function() {
-            var obj = Todo.config.columns;
-            obj = _.extend(this.toJSON(), {
-                limitTimeFormatted: this.formatted("limitTime", "YYYY/MM/DD h:mm")
+            var obj = this.toJSON();
+            obj = _.extend(obj, {
+                limitTimeFormatted: this.formatted("limitTime", "YYYY/MM/DD h:mm"),
+                stateText: obj.done === true.toString() ? "Done" : "Todo",
+                stateColor: obj.done === true.toString() ? "blue" : "red",
+                stateVisible: false
             });
             return obj;
         };

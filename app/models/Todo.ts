@@ -58,7 +58,8 @@ module models {
             obj = _.extend(obj, {
                 limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm'),
                 stateText:  obj.done === true.toString() ? 'Done' : 'Todo',
-                stateColor: obj.done === true.toString() ? 'blue' : 'red'
+                stateColor: obj.done === true.toString() ? 'blue' : 'red',
+                stateVisible: false
             });
             return obj;
         }

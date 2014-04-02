@@ -1,5 +1,3 @@
-declare var $;
-
 /**
  * table click event handler.
  */

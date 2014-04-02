@@ -1,5 +1,3 @@
-declare var $:any;
-
 /**
  * filter the Tasks model collection data.
  */ 

@@ -1,5 +1,3 @@
-declare var $;
-
 /**
  * open AddTask window.
  */

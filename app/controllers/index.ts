@@ -1,3 +1,5 @@
+/// <reference path="../declarations/reference.d.ts"/>
+
 /**
  * tabOpen event handler
  */

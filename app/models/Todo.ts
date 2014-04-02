@@ -1,3 +1,5 @@
+/// <reference path="IExportableModel.d.ts"/>
+
 module models {
     export class Todo extends Backbone.Model implements IExportableModel {
         public config = Todo.config;

@@ -1,0 +1,70 @@
+# alloy.jmk の作成
+
+以下の記事を参考にする。
+[Titanium + Alloy + TypeScript で、iOS & Android アプリを作る]
+http://qiita.com/JunSuzukiJapan@github/items/09d9feabaad68724e384#3-1
+
+typescript.js ではなく、tsc.jsを使う。
+そのため、記事にあるalloy.jmkのcompile関数は不要のため削除。
+
+Typescript インストールフォルダの tsc.js と lib.d.ts を
+Alloy インストールフォルダ内の bin フォルダにコピーする。
+
+alloy.jmk を編集して、tsc.js を読み込むようにする。
+
+wrench.readdirSyncRecursive のコードブロックの前にBatchCompilerのインスタンスの生成文を挿入。
+    var batch = new TypeScript.BatchCompiler(TypeScript.IO);
+    
+wrench.readdirSyncRecursive のコードブロックの中のcompile関数の代わりに、ファイルパスをBatchCompilerに追加。
+    batch.inputFiles.push(filename);
+    
+wrench.readdirSyncRecursive のコードブロックの後にBatchCompilerのcompile実行文を追加。
+    batch.batchCompile();
+    
+完成した"pre:compile"のコードブロックは以下の通り。
+    task("pre:compile", function(event,logger) {
+        var wrench = require("wrench"),
+            fs = require("fs"),
+            path = require("path");
+    
+        var code = [
+            fs.readFileSync("/usr/local/lib/node_modules/alloy/bin/tsc.js"), // <- path to tsc.js in your environment
+            "module.exports = TypeScript;"
+        ].join("");
+        fs.writeFileSync(process.env.TMPDIR + "tsc.js", code);
+        var TypeScript = require(process.env.TMPDIR + "tsc.js");
+        fs.unlinkSync(process.env.TMPDIR + "tsc.js");
+    
+        event.alloyConfig.tsc = [];
+        
+        var batch = new TypeScript.BatchCompiler(TypeScript.IO);
+        wrench.readdirSyncRecursive(event.dir.home).forEach(function(target){
+            if (target.match(/\.ts$/) && ! target.match(/\.d\.ts$/)) {
+                var filename = path.join(event.dir.home + "/" + target);
+                batch.inputFiles.push(filename);
+                event.alloyConfig.tsc.push(target.replace(/.ts$/, ".js"));
+            }
+        });
+        batch.batchCompile();
+    });
+
+#tsc.js の編集
+Alloy インストールフォルダ内の bin フォルダにコピーした tsc.js を編集する。
+
+ファイルの末尾付近のBatchCompiler実行文をコメントアウトする。
+    //var batch = new TypeScript.BatchCompiler(TypeScript.IO);
+    //batch.batchCompile();
+
+BatchCompilerクラスのparseOptionsメソッド定義文の後半 opts.parse(this.ioHost.arguments) の前に
+1文追加して余分なoptionを除外する。
+    this.ioHost.arguments = this.ioHost.arguments.filter(function(arg) { 
+        return arg !== '--config';
+    });
+
+BatchCompilerクラスのresolveメソッド定義文の前半 var resolutionResults = ... の前に
+1文追加して余分なargumentsを除外する。
+    this.inputFiles = this.inputFiles.filter(function(file) { 
+        return file.match(/\.ts$/);
+    });
+
+ログの出力をする場合は、CompilationSettingsクラスのコンストラクタ内 this.gatherDiagnostics = false; -> trueに変更する。

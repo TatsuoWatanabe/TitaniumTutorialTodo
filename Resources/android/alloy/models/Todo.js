@@ -13,7 +13,7 @@ var models;
     var Todo = function(_super) {
         function Todo(attributes, options) {
             _super.call(this, attributes, options);
-            Todo.config;
+            this.config = Todo.config;
             this.exportsDefinition = Todo.exportsDefinition;
         }
         __extends(Todo, _super);
@@ -30,7 +30,8 @@ var models;
             obj = _.extend(obj, {
                 limitTimeFormatted: this.formatted("limitTime", "YYYY/MM/DD h:mm"),
                 stateText: obj.done === true.toString() ? "Done" : "Todo",
-                stateColor: obj.done === true.toString() ? "blue" : "red"
+                stateColor: obj.done === true.toString() ? "blue" : "red",
+                stateVisible: false
             });
             return obj;
         };

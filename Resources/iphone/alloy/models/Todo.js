@@ -13,7 +13,7 @@ var models;
     var Todo = function(_super) {
         function Todo(attributes, options) {
             _super.call(this, attributes, options);
-            Todo.config;
+            this.config = Todo.config;
             this.exportsDefinition = Todo.exportsDefinition;
         }
         __extends(Todo, _super);

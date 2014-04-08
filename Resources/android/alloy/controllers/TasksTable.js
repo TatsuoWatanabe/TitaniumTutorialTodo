@@ -14,7 +14,7 @@ function Controller() {
             rows.push(__alloyId6);
             var __alloyId7 = Ti.UI.createView({
                 width: Ti.UI.FILL,
-                height: Ti.UI.SIZE,
+                height: "45dp",
                 top: "6dp",
                 right: "11dp",
                 bottom: "6dp",
@@ -34,7 +34,7 @@ function Controller() {
             });
             __alloyId7.add(__alloyId8);
             var __alloyId9 = Ti.UI.createLabel({
-                width: Ti.UI.FILL,
+                width: "50%",
                 height: Ti.UI.SIZE,
                 textAlign: "left",
                 font: {
@@ -44,15 +44,14 @@ function Controller() {
             });
             __alloyId7.add(__alloyId9);
             var __alloyId10 = Ti.UI.createLabel({
-                width: Ti.UI.FILL,
+                width: "50%",
                 height: Ti.UI.SIZE,
-                textAlign: "left",
+                textAlign: "right",
                 font: {
                     fontWeight: "bold"
                 },
                 text: "undefined" != typeof __alloyId4.__transform["stateText"] ? __alloyId4.__transform["stateText"] : __alloyId4.get("stateText"),
-                color: "undefined" != typeof __alloyId4.__transform["stateColor"] ? __alloyId4.__transform["stateColor"] : __alloyId4.get("stateColor"),
-                visible: "undefined" != typeof __alloyId4.__transform["stateVisible"] ? __alloyId4.__transform["stateVisible"] : __alloyId4.get("stateVisible")
+                color: "undefined" != typeof __alloyId4.__transform["stateColor"] ? __alloyId4.__transform["stateColor"] : __alloyId4.get("stateColor")
             });
             __alloyId7.add(__alloyId10);
         }

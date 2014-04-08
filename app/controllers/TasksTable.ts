@@ -9,7 +9,7 @@ $.tasksTable.addEventListener('click', function(e) {
     var isDone = model.get('done') === true.toString();
     
     dialogs.confirm({
-        message: '[' + model.get('task') + '] ' + (isDone ? 'not Done?' : 'Done?'),
+        message: '[' + model.get('task') + '] ' + (isDone ? 'Todo?' : 'Done?'),
         callback: function() {
             model.set({done: (!isDone).toString()}).save();
         }

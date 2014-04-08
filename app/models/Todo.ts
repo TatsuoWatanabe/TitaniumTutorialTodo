@@ -45,25 +45,22 @@ module models {
         /**
          * modelのデータをJSONオブジェクトに変換して返します。
          */
-        public toJSON(options?: any) /* :typeof Todo.config.columns +TypeScript 0.9.1 */ {
-            var obj = Todo.config.columns; //型推論
-            obj = super.toJSON(options);
-            return obj;
+        public toJSON(options?: any): typeof Todo.config.columns {
+            return super.toJSON(options);
         }
 
         /**
          * toJSONで返却されるオブジェクトに拡張メンバを追加して返します。
          * @return Object
          */
-        public toJsonExtended() /* :typeof Todo.config.columns +TypeScript 0.9.1 */ {
-            var obj = this.toJSON(); //型推論
-            obj = _.extend(obj, {
+        public toJsonExtended(options?: any) {
+            var obj = this.toJSON(options);
+            var extObj = _.extend(obj, {
                 limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm'),
                 stateText:  obj.done === true.toString() ? 'Done' : 'Todo',
-                stateColor: obj.done === true.toString() ? 'blue' : 'red',
-                stateVisible: false
+                stateColor: obj.done === true.toString() ? 'blue' : 'red'
             });
-            return obj;
+            return extObj;
         }
         
         /**

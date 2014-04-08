@@ -21,19 +21,16 @@ var models;
             return 0 >= attr.task.length ? "Error: Task is not input." : 0 >= String(attr.limitTime).length ? "Error: Limit time is not set." : void 0;
         };
         Todo.prototype.toJSON = function(options) {
-            var obj = Todo.config.columns;
-            obj = _super.prototype.toJSON.call(this, options);
-            return obj;
+            return _super.prototype.toJSON.call(this, options);
         };
-        Todo.prototype.toJsonExtended = function() {
-            var obj = this.toJSON();
-            obj = _.extend(obj, {
+        Todo.prototype.toJsonExtended = function(options) {
+            var obj = this.toJSON(options);
+            var extObj = _.extend(obj, {
                 limitTimeFormatted: this.formatted("limitTime", "YYYY/MM/DD h:mm"),
                 stateText: obj.done === true.toString() ? "Done" : "Todo",
-                stateColor: obj.done === true.toString() ? "blue" : "red",
-                stateVisible: false
+                stateColor: obj.done === true.toString() ? "blue" : "red"
             });
-            return obj;
+            return extObj;
         };
         Todo.prototype.formatted = function(columnName, format) {
             var moment = require("alloy/moment");

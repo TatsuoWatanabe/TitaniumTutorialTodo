@@ -43,7 +43,7 @@ var models;
                 done: "text"
             },
             adapter: {
-                type: "localStorage",
+                type: "sql",
                 collection_name: "Todo"
             }
         };

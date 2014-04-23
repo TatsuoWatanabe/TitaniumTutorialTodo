@@ -1,0 +1,41 @@
+"#userWin[platform=ios]": {
+  backgroundColor: "#FFFFFF"
+}
+
+"View": {
+  width:  Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  top:    "20dp",
+  bottom: "20dp",
+  left:   "20dp",
+  right:  "20dp"
+}
+
+"Label": {
+  font: {
+    fontSize: "16sp",
+    fontWeight: "bold"
+  },
+  textAlign: "left",
+  color:  "#333333",
+  width:  Ti.UI.SIZE,
+  height: Ti.UI.SIZE,
+  top :   "10dp",
+  left:   "0dp"
+}
+"Label[platform=android]": {
+  color: "#FFFFFF"
+}
+
+"TextField": {
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE
+}
+"TextField[platform=ios]": {
+  borderWidth: 1,
+  borderColor: "#CCCCCC"
+}
+"Button": {
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE
+}

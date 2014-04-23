@@ -2,6 +2,7 @@
     <Window title="TasksWindowTitle">
         <RightNavButton platform="ios">
             <Button title="Add" id="addButton" />
+            <Button title="User" id="userButton" />
         </RightNavButton>
         
         <Require id="tasksTable" src="TasksTable" />

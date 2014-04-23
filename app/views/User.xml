@@ -1,0 +1,21 @@
+<Alloy>
+    <Window id="userWin" title="User Setting" tabBarHidden="true" layout="vertical">
+        <View layout="vertical">
+            <Label>User Name</Label>
+            <TextField id="txtUserName" hintText="User Name" />
+            
+            <Label>Password</Label>
+            <TextField id="txtPassword" passwordMask="true" hintText="Password" />
+            
+            <Label>Mail Address</Label>
+            <TextField id="txtMailAddress" hintText="Mail Address" />
+        </View>
+        
+        <View layout="vertical">
+            <Button id="btnCreate">Create</Button>
+            <Button id="btnShowMe">ShowMe</Button>
+            <Button id="btnLogin">Login</Button>
+            <Button id="btnClose">Close</Button>
+        </View>
+    </Window>
+</Alloy>

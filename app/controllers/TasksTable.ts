@@ -1,3 +1,6 @@
+// Trigger the synchronization
+Alloy.Collections.Todo.fetch();
+
 /**
  * table click event handler.
  */

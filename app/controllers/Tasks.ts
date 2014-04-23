@@ -1,14 +1,21 @@
 /**
- * open AddTask window.
+ * set global current tab to back from other window.
  */
-$.openAddTask = function() {
+function initializeGlobalCurrentTab() {
     if (Alloy.Globals.currentTab === undefined) {
         Alloy.Globals.currentTab = Alloy.createController('index').getView('tasksTab');
     }
-    var addWin = Alloy.createController('Add').getView('addWin');
-    Alloy.Globals.currentTab.open(addWin);
+}
+
+/**
+ * open other window.
+ */
+$.openWindow = function(controllerName: string, viewId: string) {
+    initializeGlobalCurrentTab();
+    var window = Alloy.createController(controllerName).getView(viewId);
+    Alloy.Globals.currentTab.open(window);
 };
-  
+
 /**
  * filter the Tasks model collection data.
  */

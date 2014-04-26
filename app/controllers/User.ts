@@ -1,5 +1,3 @@
-// LoginUtil = { login: () => alert('want to.') };
-
 var Cloud = require('ti.cloud');
 var CloudUsers: Ti.Cloud.Users = Cloud.Users;
 var TiApi: Ti.API = Ti['API'];
@@ -28,34 +26,16 @@ $.btnCreate.addEventListener('click', function() {
     });
 });
 
-// ShowMe
-$.btnShowMe.addEventListener('click', function() {
-    Util.User.login();
-    Cloud.sessionId = TiProperties.getString('sessionId');
-    
-    CloudUsers.showMe(function (e) {
-        if (e.success) {
-            var user = e.users[0];
-            alert('Success:\n' +
-                'id: ' + user.id + '\n' +
-                'first name: ' + user.first_name + '\n' +
-                'last name: ' + user.last_name);
-        } else {
-            alert('Error:\n' +
-                ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-});
-
 // Login
 $.btnLogin.addEventListener('click', function() {
-    CloudUsers.login({
+    
+    Util.TI.CloudUsers.login({
         login:    $.txtUserName.value,
         password: $.txtPassword.value
     }, function (e) {
         if (e.success) {
             var user = e.users[0];
-            TiProperties.setString('sessionId', Cloud.sessionId);
+            
             alert('Success:\n' +
                 'id: ' + user.id + '\n' +
                 'sessionId: ' + Cloud.sessionId + '\n' +

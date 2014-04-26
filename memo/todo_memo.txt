@@ -3,4 +3,4 @@ delete機能
 webサイト連携
 終了予定時刻入力
 終了時刻記録
-
+DONE boolean

@@ -13,7 +13,6 @@
         
         <View layout="vertical">
             <Button id="btnCreate">Create</Button>
-            <Button id="btnShowMe">ShowMe</Button>
             <Button id="btnLogin">Login</Button>
             <Button id="btnClose">Close</Button>
         </View>

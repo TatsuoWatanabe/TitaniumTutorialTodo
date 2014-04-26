@@ -1,4 +1,4 @@
-/// <reference path="../declarations/reference.d.ts"/>
+/// <reference path="../typings/reference.d.ts"/>
 
 /**
  * tabOpen event handler
@@ -45,5 +45,10 @@ function tabFocus(e) {
 $.index.addEventListener('close', function() {
     $.destroy();
 });
+
+// initialise Cloud User
+if (Util.Settings.UseCloud.enable) {
+    Util.User.loginBySavedSessionId();
+}
 
 $.index.open();

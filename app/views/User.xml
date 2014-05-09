@@ -1,20 +1,20 @@
 <Alloy>
     <Window id="userWin" title="User Setting" tabBarHidden="true" layout="vertical">
-        <View layout="vertical">
-            <Label>User Name</Label>
-            <TextField id="txtUserName" hintText="User Name" />
+        <View layout="vertical" left="20dp" right="20dp">
+            <View id="cloudStatusBar" layout="vertical" left="10dp">
+                <View layout="horizontal">
+                    <Label text="L('lbl.username') + L('', ':')" />
+                    <Label id="lblUsername" left="10dp" />
+                </View>
+            </View>
             
-            <Label>Password</Label>
-            <TextField id="txtPassword" passwordMask="true" hintText="Password" />
-            
-            <Label>Mail Address</Label>
-            <TextField id="txtMailAddress" hintText="Mail Address" />
-        </View>
-        
-        <View layout="vertical">
-            <Button id="btnCreate">Create</Button>
-            <Button id="btnLogin">Login</Button>
-            <Button id="btnClose">Close</Button>
+            <View layout="vertical" top="50%">
+                <View>
+                    <Button id="btnTwitterLogin" title="L('btn.twitterLogin')" />
+                    <Button id="btnLogout" title="L('btn.logout')" />
+                </View>
+                <Button id="btnClose" title="L('btn.close')" />
+            </View>
         </View>
     </Window>
 </Alloy>

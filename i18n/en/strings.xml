@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- Labels -->
+    <string name="lbl.username">User Name</string>
+    <!-- buttons -->
+    <string name="btn.twitterLogin">Login with twitter account</string>
+    <string name="btn.logout">Logout</string>
+    <string name="btn.close">Close</string>
+    <string name="btn.save">Save</string>
+    <!-- confirm messages -->
+    <string name="confirm.logout">logout ok?</string>
+</resources>

@@ -1,12 +1,13 @@
 <Alloy>
-  <Window id="addWin" title="Add Task" tabBarHidden="true">
-    <ScrollView id="addWrap" layout="vertical">
-      <Label>1. いつまでに</Label>
-      <Picker id="todoLimit" />
-      <Label>2. 何を行う</Label>
-      <TextArea id="inputTask" />
-      <Label>3. 保存する</Label>
-      <Button id="saveTask" title="保存する" />
-    </ScrollView>
-  </Window>
+    <Window id="addWin" title="Add Task" tabBarHidden="true">
+        <ScrollView id="addWrap" layout="vertical">
+            <Label>1. いつまでに</Label>
+            <Picker id="todoLimit" />
+          
+            <Label>2. 何を行う</Label>
+            <TextArea id="inputTask" />
+
+            <Button id="saveTask" title="L('btn.save')" height="Ti.UI.SIZE" width="Ti.UI.FILL" />
+        </ScrollView>
+    </Window>
 </Alloy>

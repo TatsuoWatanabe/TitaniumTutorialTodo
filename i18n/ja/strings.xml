@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- Labels -->
+    <string name="lbl.username">ユーザー名</string>
+    <!-- buttons -->
+    <string name="btn.twitterLogin">Twitterアカウントでログイン</string>
+    <string name="btn.logout">ログアウト</string>
+    <string name="btn.close">閉じる</string>
+    <string name="btn.save">保存する</string>
+    <!-- confirm messages -->
+    <string name="confirm.logout">ログアウトしてもよろしいですか?</string>
+</resources>

@@ -73,5 +73,5 @@ module models {
     }
 }
 
-declare var exports: { definition: any };
+declare var exports: any;
 exports.definition = models.Todo.exportsDefinition;

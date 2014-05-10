@@ -1,0 +1,1 @@
+module.exports = [{"isApi":true,"priority":1000.0003,"key":"Button","style":{width:Ti.UI.FILL,height:Ti.UI.SIZE,}},{"isId":true,"priority":100000.0004,"key":"inputTask","style":{font:{fontSize:"16sp",},}}];

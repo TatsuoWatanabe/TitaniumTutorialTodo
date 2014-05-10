@@ -1,8 +1,12 @@
 <Alloy>
     <Window title="TasksWindowTitle">
+        
+        <LeftNavButton platform="ios">
+            <Button title="User" id="btnUser" />
+        </LeftNavButton>
+        
         <RightNavButton platform="ios">
-            <Button title="Add" id="addButton" />
-            <Button title="User" id="userButton" />
+            <Button title="Add" id="btnAdd" />
         </RightNavButton>
         
         <Require id="tasksTable" src="TasksTable" />

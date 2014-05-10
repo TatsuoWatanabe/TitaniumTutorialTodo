@@ -1,17 +1,7 @@
 declare var $;
-$.todoLimit.minDate = new Date();
 
-/**
- * テキストエリアからフォーカスを外します。
- */
-$.addWrap.addEventListener('click', () => {
-    $.inputTask.blur();
-});
-
-/**
- * saveTask
- */
-$.saveTask.addEventListener('click', () => {
+// save the task
+$.btnSave.addEventListener('click', () => {
     var todo = <models.Todo>Alloy.createModel('Todo', {
         task: $.inputTask.value,
         lastModifiedAt: new Date().getTime(),
@@ -29,4 +19,9 @@ $.saveTask.addEventListener('click', () => {
         todo.destroy();
         alert($.inputTask.value + '\n' + validResult);
     }
+});
+
+// Close
+$.btnClose.addEventListener('click', () => {
+    $.addWin.close({animated: true});
 });

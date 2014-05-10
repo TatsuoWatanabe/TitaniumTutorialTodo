@@ -55,8 +55,10 @@ module models {
          */
         public toJsonExtended(options?: any) {
             var obj = this.toJSON(options);
+            var format = 'YYYY/MM/DD H:mm';
             var extObj = _.extend(obj, {
-                lastModifiedAtFormatted: this.formatted('lastModifiedAt', 'YYYY/MM/DD H:mm'),
+                lastModifiedAtFormatted: this.formatted('lastModifiedAt', format),
+                createdAtFormatted     : this.formatted('createdAt', format),
                 stateText:  obj.done === true.toString() ? 'Done' : 'Todo',
                 stateColor: obj.done === true.toString() ? 'blue' : 'red'
             });

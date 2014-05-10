@@ -1,13 +1,9 @@
 <Alloy>
     <Window id="addWin" title="Add Task" tabBarHidden="true">
-        <ScrollView id="addWrap" layout="vertical">
-            <Label>1. いつまでに</Label>
-            <Picker id="todoLimit" />
-          
-            <Label>2. 何を行う</Label>
-            <TextArea id="inputTask" />
-
-            <Button id="saveTask" title="L('btn.save')" height="Ti.UI.SIZE" width="Ti.UI.FILL" />
-        </ScrollView>
+        <View layout="vertical" top="5%" left="5%" right="5%">
+            <TextArea id="inputTask" width="Ti.UI.FILL" height="20%" hintText="L('hint.todo')" />
+            <Button id="btnSave"  title="L('btn.save')" />
+            <Button id="btnClose" title="L('btn.close')" />
+        </View>
     </Window>
 </Alloy>

@@ -7,6 +7,8 @@
     <string name="btn.logout">Logout</string>
     <string name="btn.close">Close</string>
     <string name="btn.save">Save</string>
+    <!-- HintTexts -->
+    <string name="hint.todo">What to do?</string>
     <!-- confirm messages -->
     <string name="confirm.logout">logout ok?</string>
 </resources>

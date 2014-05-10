@@ -2,11 +2,13 @@
 <resources>
     <!-- Labels -->
     <string name="lbl.username">ユーザー名</string>
-    <!-- buttons -->
+    <!-- Buttons -->
     <string name="btn.twitterLogin">Twitterアカウントでログイン</string>
     <string name="btn.logout">ログアウト</string>
     <string name="btn.close">閉じる</string>
     <string name="btn.save">保存する</string>
+    <!-- HintTexts -->
+    <string name="hint.todo">何をする?</string>
     <!-- confirm messages -->
     <string name="confirm.logout">ログアウトしてもよろしいですか?</string>
 </resources>

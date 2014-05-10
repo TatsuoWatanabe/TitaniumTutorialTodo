@@ -19,36 +19,32 @@ function tabOpen(e) {
             // Add Button
             evt.menu.add({
                 title: 'Add',
-                icon: '',
+                icon: Ti.Android.R.drawable.ic_menu_edit,
                 showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
             }).addEventListener('click', () => $.tasks.openWindow('Add', 'addWin'));
             
             // User Button
             evt.menu.add({
                 title: 'User',
-                icon: '',
+                icon: Ti.Android.R.drawable.ic_lock_idle_charging,
                 showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
             }).addEventListener('click', () => $.tasks.openWindow('User', 'userWin'));
             
         };
         activity.invalidateOptionsMenu();
     } else {
-        $.tasks.addButton.addEventListener('click',  () => $.tasks.openWindow('Add', 'addWin'));
-        $.tasks.userButton.addEventListener('click', () => $.tasks.openWindow('User', 'userWin'));
+        $.tasks.btnAdd.addEventListener('click',  () => $.tasks.openWindow('Add', 'addWin'));
+        $.tasks.btnUser.addEventListener('click', () => $.tasks.openWindow('User', 'userWin'));
     }
 }
 
-/**
- * tabFocus event handler
- */
+// tabFocus event handler
 function tabFocus(e) {
   // タブを切り替えたらそのタブをグローバルに参照できるようにする
   Alloy.Globals.currentTab = e.tab;
 }
 
-/**
- * close event handler
- */
+// close event handler
 $.index.addEventListener('close', function() {
     $.destroy();
 });

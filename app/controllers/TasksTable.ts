@@ -1,9 +1,7 @@
 // Trigger the synchronization
 Alloy.Collections.Todo.fetch();
 
-/**
- * table click event handler.
- */
+// table click event handler.
 $.tasksTable.addEventListener('click', (e) => {
     var dialogs = require('alloy/dialogs');
     var todo: models.Todo = Alloy.Collections.Todo.where({
@@ -22,16 +20,12 @@ $.tasksTable.addEventListener('click', (e) => {
     });
 });
 
-/**
- * format the Tasks model data.
- */
+// format the Tasks model data.
 function dataTransform(m: models.Todo) {
     return ($.dataTransform) ? $.dataTransform(m) : m.toJsonExtended();
 }
 
-/**
- * filter the Tasks model collection data.
- */
+// filter the Tasks model collection data.
 function dataFilter(c: Backbone.Collection) {
     return ($.dataFilter) ? $.dataFilter(c) : c.models;
 }

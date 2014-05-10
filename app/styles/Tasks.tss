@@ -1,3 +1,6 @@
-"#addButton[platform=ios]": {
+"#btnAdd[platform=ios]": {
   systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
+}
+"#btnUser[platform=ios]": {
+  systemButton: Ti.UI.iPhone.SystemButton.ORGANIZE
 }

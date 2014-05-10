@@ -19,7 +19,7 @@ $.btnTwitterLogin.addEventListener('click', () => {
 // Logout
 $.btnLogout.addEventListener('click', () => {
     dialogs.confirm({
-        message: Util.L.confirmLogout,
+        message: Util.TI.Locale.getString('confirm.logout'),
         callback: () => {
             Util.User.logout(() => onLoginStateChanged());
         }

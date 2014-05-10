@@ -38,8 +38,8 @@ module models {
          * モデルの属性を操作する直前に呼ばれるメソッドで、値を検証する処理を記述します。
          */
         public validate(attr: any) {
-          if (attr.task.length <= 0) { return "Error: Task is not input."; }
-          else { return; }
+            if (attr.task.length <= 0) { return Util.TI.Locale.getString('validate.task.empty'); }
+            else { return; }
         }
         
         /**

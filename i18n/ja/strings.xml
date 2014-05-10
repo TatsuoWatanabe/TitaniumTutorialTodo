@@ -9,6 +9,8 @@
     <string name="btn.save">保存する</string>
     <!-- HintTexts -->
     <string name="hint.todo">何をする?</string>
+    <!-- validate messages -->
+    <string name="validate.task.empty">タスクを入力してください。</string>
     <!-- confirm messages -->
     <string name="confirm.logout">ログアウトしてもよろしいですか?</string>
 </resources>

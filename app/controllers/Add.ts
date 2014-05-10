@@ -3,10 +3,10 @@ declare var $;
 // save the task
 $.btnSave.addEventListener('click', () => {
     var todo = <models.Todo>Alloy.createModel('Todo', {
-        task: $.inputTask.value,
+        task          : $.inputTask.value,
         lastModifiedAt: new Date().getTime(),
         createdAt     : new Date().getTime(),
-        done: false.toString()
+        done          : false.toString()
     });
    
     if (todo.isValid()) {
@@ -15,9 +15,9 @@ $.btnSave.addEventListener('click', () => {
         Alloy.Collections.Todo.fetch();
         alert($.inputTask.value + ': saved.');
     } else {
-        var validResult = todo.validate(todo.toJSON());
+        var reason = todo.validate(todo.toJSON());
         todo.destroy();
-        alert($.inputTask.value + '\n' + validResult);
+        alert(reason);
     }
 });
 

@@ -112,7 +112,7 @@ function Controller() {
     });
     $.btnLogout.addEventListener("click", function() {
         dialogs.confirm({
-            message: Util.L.confirmLogout,
+            message: Util.TI.Locale.getString("confirm.logout"),
             callback: function() {
                 Util.User.logout(function() {
                     return onLoginStateChanged();

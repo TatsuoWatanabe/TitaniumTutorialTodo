@@ -9,6 +9,8 @@
     <string name="btn.save">Save</string>
     <!-- HintTexts -->
     <string name="hint.todo">What to do?</string>
+    <!-- validate messages -->
+    <string name="validate.task.empty">input your task.</string>
     <!-- confirm messages -->
     <string name="confirm.logout">logout ok?</string>
 </resources>

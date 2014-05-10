@@ -1,13 +1,4 @@
-"#taskWrap": {
-  width: Ti.UI.FILL,
-  height: "45dp",
-  top: "6dp",
-  right: "11dp",
-  bottom: "6dp",
-  left: "11dp",
-  layout: "horizontal"
-}
-".taskText": {
+"Label": {
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   textAlign: "left"
@@ -18,15 +9,12 @@
     fontWeight: "bold"
   }
 }
-"#limitTime": {
-  width: "50%",
+"#lastModifiedAt": {
   font: {
     fontSize: "14sp"
   }
 }
 "#state": {
-  width: "50%",
-  textAlign: "right",
   font: {
     fontWeight: "bold"
   }

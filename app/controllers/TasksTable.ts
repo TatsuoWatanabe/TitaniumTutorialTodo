@@ -4,17 +4,20 @@ Alloy.Collections.Todo.fetch();
 /**
  * table click event handler.
  */
-$.tasksTable.addEventListener('click', function(e) {
+$.tasksTable.addEventListener('click', (e) => {
     var dialogs = require('alloy/dialogs');
-    var model: models.Todo = Alloy.Collections.Todo.where({
+    var todo: models.Todo = Alloy.Collections.Todo.where({
         alloy_id: e.rowData._id
     })[0];
-    var isDone = model.get('done') === true.toString();
+    var isDone = todo.get('done') === true.toString();
     
     dialogs.confirm({
-        message: '[' + model.get('task') + '] ' + (isDone ? 'Todo?' : 'Done?'),
-        callback: function() {
-            model.set({done: (!isDone).toString()}).save();
+        message: '[' + todo.get('task') + '] ' + (isDone ? 'Todo?' : 'Done?'),
+        callback: () => {
+            todo.save({
+                lastModifiedAt: new Date().getTime(),
+                done: (!isDone).toString()
+            });
         }
     });
 });

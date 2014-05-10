@@ -6,22 +6,23 @@ module models {
         public exportsDefinition = Todo.exportsDefinition
         static config = {
             columns: { 
-                "task": "text",
-                "limitTime": "numeric",
-                "done": "text"
+                task          : 'text',
+                lastModifiedAt: 'numeric',
+                createdAt     : 'numeric',
+                done          : 'text'
             },
             adapter: {
-                type: "sql",
-                collection_name: "Todo"
+                type: 'sql',
+                collection_name: 'Todo'
             }
         };
         static exportsDefinition = {
             config: Todo.config,
-            extendModel: function(Model: Backbone.Model) {
+            extendModel: (Model: Backbone.Model) => {
                 _.extend(Model.prototype, Todo.prototype);
                 return Model;
             },
-            extendCollection: function(Collection: Backbone.Collection) {
+            extendCollection: (Collection: Backbone.Collection) => {
                 _.extend(Collection.prototype, {
                     // extended functions and properties go here
                 });
@@ -38,7 +39,6 @@ module models {
          */
         public validate(attr: any) {
           if (attr.task.length <= 0) { return "Error: Task is not input."; }
-          else if (String(attr.limitTime).length <= 0) { return "Error: Limit time is not set."; }
           else { return; }
         }
         
@@ -56,7 +56,7 @@ module models {
         public toJsonExtended(options?: any) {
             var obj = this.toJSON(options);
             var extObj = _.extend(obj, {
-                limitTimeFormatted: this.formatted('limitTime', 'YYYY/MM/DD h:mm'),
+                lastModifiedAtFormatted: this.formatted('lastModifiedAt', 'YYYY/MM/DD H:mm'),
                 stateText:  obj.done === true.toString() ? 'Done' : 'Todo',
                 stateColor: obj.done === true.toString() ? 'blue' : 'red'
             });

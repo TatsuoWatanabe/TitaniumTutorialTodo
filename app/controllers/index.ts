@@ -7,9 +7,7 @@ if (Util.Settings.UseCloud.enable && isNetworkConnected)  {
     Util.User.loginBySavedSessionId();
 }
 
-/**
- * tabOpen event handler
- */
+// tabOpen event handler
 function tabOpen(e) {
     // Android だったらアクションバーにメニューを表示する
     if (OS_ANDROID) {

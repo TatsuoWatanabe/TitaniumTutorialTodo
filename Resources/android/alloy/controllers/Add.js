@@ -20,6 +20,10 @@ function Controller() {
         id: "__alloyId0"
     });
     $.__views.addWin.add($.__views.__alloyId0);
+    $.__views.strlen = Ti.UI.createLabel({
+        id: "strlen"
+    });
+    $.__views.__alloyId0.add($.__views.strlen);
     $.__views.inputTask = Ti.UI.createTextArea({
         font: {
             fontSize: "16sp"
@@ -46,6 +50,9 @@ function Controller() {
     $.__views.__alloyId0.add($.__views.btnClose);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.inputTask.addEventListener("change", function() {
+        $.strlen.text = $.inputTask.value.length;
+    });
     $.btnSave.addEventListener("click", function() {
         var todo = Alloy.createModel("Todo", {
             task: $.inputTask.value,

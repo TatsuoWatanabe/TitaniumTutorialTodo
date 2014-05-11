@@ -1,8 +1,8 @@
 function Controller() {
-    function __alloyId12(e) {
+    function __alloyId14(e) {
         if (e && e.fromAdapter) return;
-        __alloyId12.opts || {};
-        var models = dataFilter(__alloyId11);
+        __alloyId14.opts || {};
+        var models = dataFilter(__alloyId13);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
@@ -13,9 +13,9 @@ function Controller() {
             });
             rows.push(__alloyId5);
             var __alloyId7 = Ti.UI.createView({
-                layout: "horizontal",
+                layout: "vertical",
                 width: Ti.UI.FILL,
-                height: "45dp",
+                height: Ti.UI.SIZE,
                 top: "6dp",
                 bottom: "6dp",
                 right: "11dp",
@@ -33,7 +33,11 @@ function Controller() {
                 text: "undefined" != typeof __alloyId3.__transform["task"] ? __alloyId3.__transform["task"] : __alloyId3.get("task")
             });
             __alloyId7.add(__alloyId8);
-            var __alloyId9 = Ti.UI.createLabel({
+            var __alloyId10 = Ti.UI.createView({
+                layout: "horizontal"
+            });
+            __alloyId7.add(__alloyId10);
+            var __alloyId11 = Ti.UI.createLabel({
                 width: "50%",
                 height: Ti.UI.SIZE,
                 textAlign: "left",
@@ -42,8 +46,8 @@ function Controller() {
                 },
                 text: "undefined" != typeof __alloyId3.__transform["lastModifiedAtFormatted"] ? __alloyId3.__transform["lastModifiedAtFormatted"] : __alloyId3.get("lastModifiedAtFormatted")
             });
-            __alloyId7.add(__alloyId9);
-            var __alloyId10 = Ti.UI.createLabel({
+            __alloyId10.add(__alloyId11);
+            var __alloyId12 = Ti.UI.createLabel({
                 width: "50%",
                 height: Ti.UI.SIZE,
                 textAlign: "right",
@@ -53,7 +57,7 @@ function Controller() {
                 text: "undefined" != typeof __alloyId3.__transform["stateText"] ? __alloyId3.__transform["stateText"] : __alloyId3.get("stateText"),
                 color: "undefined" != typeof __alloyId3.__transform["stateColor"] ? __alloyId3.__transform["stateColor"] : __alloyId3.get("stateColor")
             });
-            __alloyId7.add(__alloyId10);
+            __alloyId10.add(__alloyId12);
         }
         $.__views.tasksTable.setData(rows);
     }
@@ -73,11 +77,11 @@ function Controller() {
     $.__views.tasksTable = Ti.UI.createTableView({
         id: "tasksTable"
     });
-    var __alloyId11 = Alloy.Collections["Todo"] || Todo;
-    __alloyId11.on("fetch destroy change add remove reset", __alloyId12);
+    var __alloyId13 = Alloy.Collections["Todo"] || Todo;
+    __alloyId13.on("fetch destroy change add remove reset", __alloyId14);
     $.__views.tasksTable && $.addTopLevelView($.__views.tasksTable);
     exports.destroy = function() {
-        __alloyId11.off("fetch destroy change add remove reset", __alloyId12);
+        __alloyId13.off("fetch destroy change add remove reset", __alloyId14);
     };
     _.extend($, $.__views);
     Alloy.Collections.Todo.fetch();

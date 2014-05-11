@@ -1,6 +1,7 @@
 <Alloy>
     <Window id="addWin" title="Add Task" tabBarHidden="true">
         <View layout="vertical" top="5%" left="5%" right="5%">
+            <Label id="strlen" />
             <TextArea id="inputTask" width="Ti.UI.FILL" height="20%" hintText="L('hint.todo')" />
             <Button id="btnSave"  title="L('btn.save')" />
             <Button id="btnClose" title="L('btn.close')" />

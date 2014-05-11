@@ -1,5 +1,9 @@
 declare var $;
 
+$.inputTask.addEventListener('change', (e) => {
+    $.strlen.text = $.inputTask.value.length;
+});
+
 // save the task
 $.btnSave.addEventListener('click', () => {
     var todo = <models.Todo>Alloy.createModel('Todo', {

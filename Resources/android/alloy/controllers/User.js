@@ -20,15 +20,15 @@ function Controller() {
         layout: "vertical"
     });
     $.__views.userWin && $.addTopLevelView($.__views.userWin);
-    $.__views.__alloyId13 = Ti.UI.createView({
+    $.__views.__alloyId15 = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         layout: "vertical",
         left: "20dp",
         right: "20dp",
-        id: "__alloyId13"
+        id: "__alloyId15"
     });
-    $.__views.userWin.add($.__views.__alloyId13);
+    $.__views.userWin.add($.__views.__alloyId15);
     $.__views.cloudStatusBar = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
@@ -36,15 +36,15 @@ function Controller() {
         layout: "vertical",
         left: "10dp"
     });
-    $.__views.__alloyId13.add($.__views.cloudStatusBar);
-    $.__views.__alloyId14 = Ti.UI.createView({
+    $.__views.__alloyId15.add($.__views.cloudStatusBar);
+    $.__views.__alloyId16 = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         layout: "horizontal",
-        id: "__alloyId14"
+        id: "__alloyId16"
     });
-    $.__views.cloudStatusBar.add($.__views.__alloyId14);
-    $.__views.__alloyId15 = Ti.UI.createLabel({
+    $.__views.cloudStatusBar.add($.__views.__alloyId16);
+    $.__views.__alloyId17 = Ti.UI.createLabel({
         font: {
             fontSize: "16sp",
             fontWeight: "bold"
@@ -52,9 +52,9 @@ function Controller() {
         color: "#FFFFFF",
         width: Ti.UI.SIZE,
         text: L("lbl.username") + L("", ":"),
-        id: "__alloyId15"
+        id: "__alloyId17"
     });
-    $.__views.__alloyId14.add($.__views.__alloyId15);
+    $.__views.__alloyId16.add($.__views.__alloyId17);
     $.__views.lblUsername = Ti.UI.createLabel({
         font: {
             fontSize: "16sp",
@@ -65,42 +65,42 @@ function Controller() {
         id: "lblUsername",
         left: "10dp"
     });
-    $.__views.__alloyId14.add($.__views.lblUsername);
-    $.__views.__alloyId16 = Ti.UI.createView({
+    $.__views.__alloyId16.add($.__views.lblUsername);
+    $.__views.__alloyId18 = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         layout: "vertical",
         top: "50%",
-        id: "__alloyId16"
+        id: "__alloyId18"
     });
-    $.__views.__alloyId13.add($.__views.__alloyId16);
-    $.__views.__alloyId17 = Ti.UI.createView({
+    $.__views.__alloyId15.add($.__views.__alloyId18);
+    $.__views.__alloyId19 = Ti.UI.createView({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
-        id: "__alloyId17"
+        id: "__alloyId19"
     });
-    $.__views.__alloyId16.add($.__views.__alloyId17);
+    $.__views.__alloyId18.add($.__views.__alloyId19);
     $.__views.btnTwitterLogin = Ti.UI.createButton({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         id: "btnTwitterLogin",
         title: L("btn.twitterLogin")
     });
-    $.__views.__alloyId17.add($.__views.btnTwitterLogin);
+    $.__views.__alloyId19.add($.__views.btnTwitterLogin);
     $.__views.btnLogout = Ti.UI.createButton({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         id: "btnLogout",
         title: L("btn.logout")
     });
-    $.__views.__alloyId17.add($.__views.btnLogout);
+    $.__views.__alloyId19.add($.__views.btnLogout);
     $.__views.btnClose = Ti.UI.createButton({
         width: Ti.UI.FILL,
         height: Ti.UI.SIZE,
         id: "btnClose",
         title: L("btn.close")
     });
-    $.__views.__alloyId16.add($.__views.btnClose);
+    $.__views.__alloyId18.add($.__views.btnClose);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var dialogs = require("alloy/dialogs");

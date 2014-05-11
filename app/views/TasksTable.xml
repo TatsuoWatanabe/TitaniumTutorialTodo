@@ -1,10 +1,12 @@
 <Alloy>
     <TableView id="tasksTable" dataCollection="Todo" dataTransform="dataTransform" dataFilter="dataFilter">
         <TableViewRow _id="{alloy_id}">
-            <View layout="horizontal" width="Ti.UI.FILL" height="45dp" top="6dp" bottom="6dp" right="11dp" left="11dp">
+            <View layout="vertical" width="Ti.UI.FILL" height="Ti.UI.SIZE" top="6dp" bottom="6dp" right="11dp" left="11dp">
                 <Label id="task" text="{task}" />
-                <Label id="lastModifiedAt" width="50%" textAlign="left" text="{lastModifiedAtFormatted}" />
-                <Label id="state" width="50%" textAlign="right" text="{stateText}" color="{stateColor}" />
+                <View layout="horizontal">
+                    <Label id="lastModifiedAt" width="50%" textAlign="left" text="{lastModifiedAtFormatted}" />
+                    <Label id="state" width="50%" textAlign="right" text="{stateText}" color="{stateColor}" />
+                </View>
             </View>
         </TableViewRow>
     </TableView>
